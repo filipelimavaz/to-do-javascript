@@ -1,0 +1,178 @@
+:root {
+    --main-text-color: #102C57;
+    --button-bg-color: #fdfdfd;
+    --button-text-color: #102C57;
+    --button-border-color: #102C57;
+    --button-hover-bg-color: #102C57;
+    --button-hover-text-color: #FEFAF6;
+    --button-hover-icon-color: #FEFAF6;
+    --input-select-padding: 0.25rem 0.5rem;
+    --container-bg-color: rgba(218, 192, 163, 0.8);
+    --container-border-color: #cccccc;
+    --toolbar-list-border-color: #dddddd;
+    --done-bg-color: rgba(41, 176, 110, 0.8);
+    --done-text-color: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    background: linear-gradient(to right, var(--container-bg-color) 0%, var(--container-bg-color) 30%, var(--main-text-color) 30%, var(--main-text-color) 70%, var(--container-bg-color) 70%, var(--container-bg-color) 100%);
+}
+
+button {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: 2px solid var(--button-border-color);
+    padding: .3rem .6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg-color);
+    color: var(--button-hover-text-color);
+}
+
+button:hover > i {
+    color: var(--button-hover-icon-color);
+}
+
+button i {
+    color: var(--button-border-color);
+    font-weight: bold;
+    pointer-events: none;
+}
+
+input, 
+select {
+    padding: var(--input-select-padding);
+}
+
+.hidden {
+    display: none;
+}
+
+.todo-container {
+    max-width: 450px;
+    margin: 3rem auto;
+    background-color: var(--container-bg-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.todo-container header {
+    text-align: center;
+    padding: 0 1rem 1rem;
+    border-bottom: 1px solid var(--container-border-color);
+}
+
+#todo-form, 
+#edit-form {
+    padding: 1rem;
+    border-bottom: 1px solid var(--container-border-color);
+}
+
+#todo-form p,
+#edit-form p {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-control {
+    display: flex;
+}
+
+.form-control input {
+    margin-right: 0.3rem;
+}
+
+#cancel-edit-btn {
+    margin-top: 1rem;
+}
+
+#toolbar {
+    padding: 1rem;
+    border-bottom: 1px solid var(--toolbar-list-border-color);
+    display: flex;
+}
+
+#toolbar h4 {
+    margin-bottom: 0.5rem;
+}
+
+#search {
+    border-right: 1px solid var(--toolbar-list-border-color);
+    padding-right: 1rem;
+    margin-right: 1rem;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+#search form {
+    display: flex;
+}
+
+#search input {
+    width: 100%;
+    margin-right: 0.3rem;
+}
+
+#filter {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+#filter select {
+    flex: 1;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--toolbar-list-border-color);
+    transition: 0.3s;
+}
+
+.todo h3 {
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+.todo button {
+    margin-left: 0.4rem;
+}
+
+.done {
+    background-color: var(--done-bg-color);
+}
+
+.done h3 {
+    color: var(--done-text-color);
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+@media(max-width: 1180px) {
+    body {
+        background: #102C57;
+        margin: 0 0.6rem;
+    }
+} 
